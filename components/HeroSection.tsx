@@ -36,19 +36,6 @@ export default function HeroSection() {
             <span className="text-white/90 text-sm font-medium">{t('hero.beta-badge')}</span>
           </motion.div>
 
-          {/* Beta Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-white">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">{t('hero.beta-badge')}</span>
-            </div>
-          </motion.div>
-
           {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -175,6 +162,7 @@ export default function HeroSection() {
 } 
 
 export function HeroWhatIsSection() {
+  const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-black" />
@@ -182,15 +170,15 @@ export function HeroWhatIsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            ¿Qué es Brain AIX?
+            {t('hero-what.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-            La nueva era de los clones digitales impulsados por IA.
+            {t('hero-what.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">IA</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Clon Digital</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Automatización</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-what.tag1')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-what.tag2')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-what.tag3')}</div>
           </div>
         </div>
       </div>
@@ -199,6 +187,7 @@ export function HeroWhatIsSection() {
 }
 
 export function HeroUseCasesSection() {
+  const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-black" />
@@ -206,16 +195,15 @@ export function HeroUseCasesSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Casos de Uso Reales
+            {t('hero-usecases.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-            Descubre cómo tu clon digital puede transformar tu productividad 
-            y presencia en múltiples ámbitos de tu vida.
+            {t('hero-usecases.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Reuniones</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Contenido</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Mensajes</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-usecases.tag1')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-usecases.tag2')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-usecases.tag3')}</div>
           </div>
         </div>
       </div>
@@ -224,6 +212,7 @@ export function HeroUseCasesSection() {
 }
 
 export function HeroTechnologySection() {
+  const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-black" />
@@ -231,15 +220,15 @@ export function HeroTechnologySection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Tecnología de Vanguardia
+            {t('hero-tech.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-            Descubre el stack tecnológico más avanzado que hace posible la clonación digital del futuro.
+            {t('hero-tech.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">IA Avanzada</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Machine Learning</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Biometría</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-tech.tag1')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-tech.tag2')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-tech.tag3')}</div>
           </div>
         </div>
       </div>
@@ -248,6 +237,7 @@ export function HeroTechnologySection() {
 }
 
 export function HeroAccessSection() {
+  const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-black" />
@@ -255,15 +245,15 @@ export function HeroAccessSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Acceso Exclusivo
+            {t('hero-access.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-            Solicita acceso anticipado y sé parte de la revolución de los clones digitales.
+            {t('hero-access.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Beta</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Exclusivo</div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">Prioridad</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-access.tag1')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-access.tag2')}</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white">{t('hero-access.tag3')}</div>
           </div>
         </div>
       </div>

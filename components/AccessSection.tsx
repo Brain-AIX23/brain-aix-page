@@ -49,40 +49,40 @@ export default function AccessSection() {
   const benefits = [
     {
       icon: Crown,
-      title: "Acceso exclusivo",
-      description: "Sé uno de los primeros 250 usuarios"
+      title: t('access.benefit1.title'),
+      description: t('access.benefit1.description')
     },
     {
       icon: Users,
-      title: "Comunidad privada",
-      description: "Acceso a grupo exclusivo de early adopters"
+      title: t('access.benefit2.title'),
+      description: t('access.benefit2.description')
     },
     {
       icon: Clock,
-      title: "Soporte prioritario",
-      description: "Atención directa del equipo fundador"
+      title: t('access.benefit3.title'),
+      description: t('access.benefit3.description')
     },
     {
       icon: Zap,
-      title: "Precios especiales",
-      description: "Tarifas preferenciales de lanzamiento"
+      title: t('access.benefit4.title'),
+      description: t('access.benefit4.description')
     }
   ]
 
   const useCases = [
-    "Reuniones virtuales",
-    "Contenido para redes sociales",
-    "Atención de mensajes",
-    "Soporte emocional",
-    "Legado digital",
-    "Otro (especificar)"
+    t('access.usecase1'),
+    t('access.usecase2'),
+    t('access.usecase3'),
+    t('access.usecase4'),
+    t('access.usecase5'),
+    t('access.usecase6')
   ]
 
   const timelines = [
-    "Inmediato (esta semana)",
-    "Próximo mes",
-    "En 2-3 meses",
-    "Más adelante"
+    t('access.timeline1'),
+    t('access.timeline2'),
+    t('access.timeline3'),
+    t('access.timeline4')
   ]
 
   if (isSubmitted) {
@@ -99,28 +99,27 @@ export default function AccessSection() {
               <CheckCircle className="h-10 w-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              ¡Solicitud enviada con éxito!
+              {t('access.success.title')}
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Gracias por tu interés en Brain AIX. Nuestro equipo revisará tu solicitud 
-              y te contactaremos en las próximas 24 horas.
+              {t('access.success.subtitle')}
             </p>
             <div className="bg-gradient-to-r from-brain-50 to-purple-50 rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Próximos pasos:
+                {t('access.success.steps')}
               </h3>
               <div className="space-y-3 text-left max-w-md mx-auto">
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-brain-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
-                  <span className="text-gray-700">Revisión de tu caso de uso</span>
+                  <span className="text-gray-700">{t('access.success.step1')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-brain-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
-                  <span className="text-gray-700">Contacto personalizado</span>
+                  <span className="text-gray-700">{t('access.success.step2')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-brain-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
-                  <span className="text-gray-700">Acceso a la plataforma beta</span>
+                  <span className="text-gray-700">{t('access.success.step3')}</span>
                 </div>
               </div>
             </div>
@@ -142,15 +141,14 @@ export default function AccessSection() {
         >
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-brain-50 to-purple-50 text-brain-700 rounded-full px-6 py-3 mb-8 border border-brain-200">
             <div className="w-2 h-2 bg-brain-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium">Beta Exclusiva</span>
+            <span className="text-sm font-medium">{t('access.badge')}</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
-            Únete a la revolución
+            {t('access.title')}
           </h2>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Sé uno de los primeros 250 usuarios en experimentar el futuro 
-            de la clonación digital. Sin precios públicos, solo acceso privado.
+            {t('access.subtitle')}
           </p>
         </motion.div>
 
@@ -163,10 +161,10 @@ export default function AccessSection() {
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Galería de clones generados
+              {t('access.gallery.title')}
             </h3>
             <p className="text-gray-600">
-              Mira algunos ejemplos de clones digitales creados con Brain AIX
+              {t('access.gallery.subtitle')}
             </p>
           </div>
           
@@ -201,7 +199,7 @@ export default function AccessSection() {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Beneficios exclusivos
+                {t('access.benefits.title')}
               </h3>
               <div className="space-y-6">
                 {benefits.map((benefit, index) => (
@@ -231,25 +229,24 @@ export default function AccessSection() {
             {/* Stats */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                Estado actual
+                {t('access.stats.title')}
               </h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-brain-600">250</div>
-                  <div className="text-sm text-gray-600">Plazas totales</div>
+                  <div className="text-sm text-gray-600">{t('access.stats.total')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">187</div>
-                  <div className="text-sm text-gray-600">Ocupadas</div>
+                  <div className="text-sm text-gray-600">{t('access.stats.occupied')}</div>
                 </div>
               </div>
               <div className="mt-4 bg-gray-200 rounded-full h-2">
                 <div className="bg-gradient-to-r from-brain-500 to-purple-500 h-2 rounded-full" style={{ width: '75%' }}></div>
               </div>
               <p className="text-sm text-gray-600 mt-2">
-                63 plazas disponibles
-              </p>
-            </div>
+  {t('access.stats.available').replace('{count}', '63')}
+</p>            </div>
           </motion.div>
 
           {/* Form */}
@@ -262,7 +259,7 @@ export default function AccessSection() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nombre completo *
+                  {t('access.form.name')}
                 </label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -274,14 +271,14 @@ export default function AccessSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Tu nombre completo"
+                    placeholder={t('access.form.name')}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email profesional *
+                  {t('access.form.email')}
                 </label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -293,14 +290,14 @@ export default function AccessSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
-                    placeholder="tu@email.com"
+                    placeholder={t('access.form.email')}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  Empresa / Organización
+                  {t('access.form.company')}
                 </label>
                 <input
                   type="text"
@@ -309,13 +306,13 @@ export default function AccessSection() {
                   value={formData.company}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Nombre de tu empresa"
+                  placeholder={t('access.form.company')}
                 />
               </div>
 
               <div>
                 <label htmlFor="useCase" className="block text-sm font-medium text-gray-700 mb-2">
-                  Caso de uso principal *
+                  {t('access.form.usecase')}
                 </label>
                 <select
                   id="useCase"
@@ -325,7 +322,7 @@ export default function AccessSection() {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="">Selecciona tu caso de uso</option>
+                  <option value="">{t('access.form.usecase')}</option>
                   {useCases.map((useCase, index) => (
                     <option key={index} value={useCase}>
                       {useCase}
@@ -336,7 +333,7 @@ export default function AccessSection() {
 
               <div>
                 <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
-                  ¿Cuándo planeas implementar? *
+                  {t('access.form.timeline')}
                 </label>
                 <select
                   id="timeline"
@@ -346,7 +343,7 @@ export default function AccessSection() {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="">Selecciona el timeline</option>
+                  <option value="">{t('access.form.timeline')}</option>
                   {timelines.map((timeline, index) => (
                     <option key={index} value={timeline}>
                       {timeline}
@@ -357,7 +354,7 @@ export default function AccessSection() {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Cuéntanos más sobre tu proyecto
+                  {t('access.form.message')}
                 </label>
                 <div className="relative">
                   <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
@@ -366,7 +363,7 @@ export default function AccessSection() {
                     name="message"
                     rows={4}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Describe brevemente cómo planeas usar tu clon digital..."
+                    placeholder={t('access.form.message.placeholder')}
                   />
                 </div>
               </div>
@@ -377,12 +374,12 @@ export default function AccessSection() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-black text-white py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center space-x-3 shadow-xl"
               >
-                <span>Comenzar ahora</span>
+                <span>{t('access.form.submit')}</span>
                 <ArrowRight className="h-6 w-6" />
               </motion.button>
 
               <p className="text-sm text-gray-500 text-center">
-                Te contactaremos en las próximas 24 horas para coordinar tu acceso.
+                {t('access.form.contact')}
               </p>
             </form>
           </motion.div>
@@ -404,18 +401,17 @@ export default function AccessSection() {
              {/* Content */}
              <div className="relative z-10">
                <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                 ¿Serás tú el siguiente?
+                 {t('access.cta.title')}
                </h3>
                <p className="text-gray-300 max-w-2xl mx-auto mb-6">
-                 Únete a la revolución de la clonación digital. 
-                 El futuro ya está aquí, solo necesitas dar el primer paso.
+                 {t('access.cta.subtitle')}
                </p>
                <motion.button
                  whileHover={{ scale: 1.05 }}
                  whileTap={{ scale: 0.95 }}
                  className="bg-white text-black px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl"
                >
-                 Comenzar ahora
+                 {t('access.cta.button')}
                </motion.button>
              </div>
            </div>

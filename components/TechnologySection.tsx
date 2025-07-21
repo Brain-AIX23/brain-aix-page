@@ -28,59 +28,59 @@ export default function TechnologySection() {
   const technologies = [
     {
       icon: Target,
-      title: "Clonación realista",
-      description: "Con solo 3 min de datos",
+      title: t('tech.tech1.title'),
+      description: t('tech.tech1.desc'),
       color: "from-red-500 to-pink-500",
-      detail: "Nuestra IA puede crear un clon hiperrealista con apenas 3 minutos de audio y video."
+      detail: t('tech.tech1.detail')
     },
     {
       icon: Dna,
-      title: "RAG + Fine-tuning",
-      description: "Automático al subir documentos",
+      title: t('tech.tech2.title'),
+      description: t('tech.tech2.desc'),
       color: "from-blue-500 to-cyan-500",
-      detail: "Sistema de recuperación aumentada y ajuste fino que aprende automáticamente de tus documentos."
+      detail: t('tech.tech2.detail')
     },
     {
       icon: Brain,
-      title: "Personalidad entrenada",
-      description: "Tus palabras, tono y estilo",
+      title: t('tech.tech3.title'),
+      description: t('tech.tech3.desc'),
       color: "from-purple-500 to-pink-500",
-      detail: "Captura la esencia de tu personalidad, incluyendo expresiones, gestos y patrones de habla."
+      detail: t('tech.tech3.detail')
     },
     {
       icon: Mic,
-      title: "Voz clonada",
-      description: "ElevenLabs / XTTS / OpenVoice",
+      title: t('tech.tech4.title'),
+      description: t('tech.tech4.desc'),
       color: "from-green-500 to-emerald-500",
-      detail: "Integración con las mejores tecnologías de clonación de voz del mercado."
+      detail: t('tech.tech4.detail')
     },
     {
       icon: Bot,
-      title: "Avatares 3D",
-      description: "SadTalker, EMO y MotionLLaMA",
+      title: t('tech.tech5.title'),
+      description: t('tech.tech5.desc'),
       color: "from-yellow-500 to-orange-500",
-      detail: "Avatares tridimensionales que se mueven y expresan de manera natural y realista."
+      detail: t('tech.tech5.detail')
     },
     {
       icon: Shield,
-      title: "Encriptación biométrica",
-      description: "+ control ético anti-deepfake",
+      title: t('tech.tech6.title'),
+      description: t('tech.tech6.desc'),
       color: "from-indigo-500 to-purple-500",
-      detail: "Protección avanzada contra uso malicioso y verificación de identidad biométrica."
+      detail: t('tech.tech6.detail')
     }
   ]
 
   const techStack = [
-    { name: "ElevenLabs", category: "Voz" },
-    { name: "XTTS", category: "Voz" },
-    { name: "OpenVoice", category: "Voz" },
-    { name: "SadTalker", category: "Video" },
-    { name: "EMO", category: "Video" },
-    { name: "MotionLLaMA", category: "Video" },
-    { name: "GPT-4", category: "IA" },
-    { name: "Claude", category: "IA" },
-    { name: "RAG", category: "Procesamiento" },
-    { name: "Fine-tuning", category: "Procesamiento" }
+    { name: "ElevenLabs", category: t('tech.stack.voice') },
+    { name: "XTTS", category: t('tech.stack.voice') },
+    { name: "OpenVoice", category: t('tech.stack.voice') },
+    { name: "SadTalker", category: t('tech.stack.video') },
+    { name: "EMO", category: t('tech.stack.video') },
+    { name: "MotionLLaMA", category: t('tech.stack.video') },
+    { name: "GPT-4", category: t('tech.stack.ai') },
+    { name: "Claude", category: t('tech.stack.ai') },
+    { name: "RAG", category: t('tech.stack.proc') },
+    { name: "Fine-tuning", category: t('tech.stack.proc') }
   ]
 
   return (
@@ -141,18 +141,17 @@ export default function TechnologySection() {
          >
            <div className="text-center mb-12">
              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-               Stack tecnológico
+               {t('tech.stack.title')}
              </h3>
              <p className="text-gray-600 max-w-2xl mx-auto">
-               Integramos las mejores tecnologías de IA del mercado para crear 
-               la experiencia de clonación digital más avanzada.
+               {t('tech.stack.subtitle')}
              </p>
            </div>
 
            {/* Generated Examples */}
            <div className="mb-12">
              <h4 className="text-xl font-bold text-gray-900 mb-6 text-center">
-               Resultados generados con nuestra tecnología
+               {t('tech.examples.title')}
              </h4>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                {/* Example 1 */}
@@ -202,7 +201,7 @@ export default function TechnologySection() {
              </div>
              <div className="text-center mt-4">
                <p className="text-sm text-gray-500">
-                 Ejemplos generados con nuestra tecnología de IA avanzada
+                 {t('tech.examples.subtitle')}
                </p>
              </div>
            </div>
@@ -239,7 +238,7 @@ export default function TechnologySection() {
               <Zap className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">99.9%</div>
-            <div className="text-gray-600 text-sm">Precisión en clonación</div>
+            <div className="text-gray-600 text-sm">{t('tech.stats.precision')}</div>
           </div>
           
           <div className="text-center">
@@ -247,7 +246,7 @@ export default function TechnologySection() {
               <Cpu className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">&lt;100ms</div>
-            <div className="text-gray-600 text-sm">Latencia de respuesta</div>
+            <div className="text-gray-600 text-sm">{t('tech.stats.latency')}</div>
           </div>
           
           <div className="text-center">
@@ -255,7 +254,7 @@ export default function TechnologySection() {
               <Database className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">PB</div>
-            <div className="text-gray-600 text-sm">Capacidad de procesamiento</div>
+            <div className="text-gray-600 text-sm">{t('tech.stats.capacity')}</div>
           </div>
           
           <div className="text-center">
@@ -263,7 +262,7 @@ export default function TechnologySection() {
               <Globe className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">150+</div>
-            <div className="text-gray-600 text-sm">Países soportados</div>
+            <div className="text-gray-600 text-sm">{t('tech.stats.countries')}</div>
           </div>
         </motion.div>
 
@@ -277,24 +276,24 @@ export default function TechnologySection() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                Seguridad y ética primero
+                {t('tech.security.title')}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Lock className="h-6 w-6 text-green-400" />
-                  <span>Encriptación de nivel bancario</span>
+                  <span>{t('tech.security.banking')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Shield className="h-6 w-6 text-green-400" />
-                  <span>Verificación biométrica obligatoria</span>
+                  <span>{t('tech.security.biometric')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Sparkles className="h-6 w-6 text-green-400" />
-                  <span>Control total sobre tu clon</span>
+                  <span>{t('tech.security.control')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Brain className="h-6 w-6 text-green-400" />
-                  <span>Detección anti-deepfake integrada</span>
+                  <span>{t('tech.security.deepfake')}</span>
                 </div>
               </div>
             </div>
@@ -304,8 +303,7 @@ export default function TechnologySection() {
                 <Shield className="h-16 w-16 text-white" />
               </div>
               <p className="text-gray-300">
-                Tu privacidad y seguridad son nuestra máxima prioridad. 
-                Cada clon está protegido con las mejores medidas de seguridad.
+                {t('tech.security.desc')}
               </p>
             </div>
           </div>

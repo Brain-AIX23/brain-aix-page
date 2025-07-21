@@ -57,7 +57,7 @@ export default function Navigation({ sectionActive, onSectionChange }: Navigatio
                 </div>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-brain-600 to-purple-600 bg-clip-text text-transparent">
-                Brain AIX
+                {t('brand.name')}
               </span>
             </motion.div>
 

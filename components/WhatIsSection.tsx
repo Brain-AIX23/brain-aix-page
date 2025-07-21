@@ -193,18 +193,17 @@ export default function WhatIsSection() {
           className="text-center mt-16"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            ¿Listo para crear tu segunda mente?
+            {t('whatis.cta.title')}
           </h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Únete a los primeros 250 usuarios que ya están experimentando 
-            el poder de la clonación digital.
+            {t('whatis.cta.subtitle')}
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-brain-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
           >
-            Solicitar acceso exclusivo
+            {t('whatis.cta.button')}
           </motion.button>
         </motion.div>
       </div>

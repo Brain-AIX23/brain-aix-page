@@ -159,6 +159,18 @@ class TranslationService {
       es: 'El futuro ya está aquí. La pregunta no es si la clonación digital llegará, sino si serás parte de esta revolución.',
       en: 'The future is already here. The question is not whether digital cloning will arrive, but whether you will be part of this revolution.'
     },
+    'trust.supported.title': { es: 'Respaldado por líderes en tecnología', en: 'Backed by technology leaders' },
+    'trust.supported.partner': { es: 'Partners en stealth mode', en: 'Stealth mode partners' },
+    'trust.supported.advisors': { es: 'Advisors expertos', en: 'Expert advisors' },
+    'trust.supported.investors': { es: 'Inversores estratégicos', en: 'Strategic investors' },
+    'trust.indicator.advanced-ai': { es: 'IA Avanzada', en: 'Advanced AI' },
+    'trust.indicator.tech': { es: 'Tecnología de vanguardia', en: 'Cutting-edge technology' },
+    'trust.indicator.speed': { es: 'Velocidad', en: 'Speed' },
+    'trust.indicator.cloning': { es: 'Clonación en minutos', en: 'Cloning in minutes' },
+    'trust.indicator.global': { es: 'Global', en: 'Global' },
+    'trust.indicator.available': { es: 'Disponible en todo el mundo', en: 'Available worldwide' },
+    'trust.indicator.community': { es: 'Comunidad', en: 'Community' },
+    'trust.indicator.early': { es: '+250 early adopters', en: '+250 early adopters' },
 
     // What Is Section
     'whatis.badge': {
@@ -233,6 +245,9 @@ class TranslationService {
       es: 'Clon Digital',
       en: 'Digital Clone'
     },
+    'whatis.cta.title': { es: '¿Listo para crear tu segunda mente?', en: 'Ready to create your second mind?' },
+    'whatis.cta.subtitle': { es: 'Únete a los primeros 250 usuarios que ya están experimentando el poder de la clonación digital.', en: 'Join the first 250 users already experiencing the power of digital cloning.' },
+    'whatis.cta.button': { es: 'Solicitar acceso exclusivo', en: 'Request exclusive access' },
 
     // Use Cases Section
     'usecases.title': {
@@ -445,10 +460,6 @@ class TranslationService {
       es: 'Captura y replicación perfecta de características únicas.',
       en: 'Perfect capture and replication of unique characteristics.'
     },
-    'tech.security.title': {
-      es: 'Seguridad de nivel bancario',
-      en: 'Bank-level security'
-    },
     'tech.security.description': {
       es: 'Encriptación end-to-end y protección de datos personales.',
       en: 'End-to-end encryption and personal data protection.'
@@ -469,22 +480,6 @@ class TranslationService {
       es: 'Controles anti-deepfake y uso responsable de IA.',
       en: 'Anti-deepfake controls and responsible AI use.'
     },
-    'tech.stack.title': {
-      es: 'Stack tecnológico',
-      en: 'Technology stack'
-    },
-    'tech.stack.subtitle': {
-      es: 'Integramos las mejores tecnologías de IA del mercado para crear la experiencia de clonación digital más avanzada.',
-      en: 'We integrate the best AI technologies in the market to create the most advanced digital cloning experience.'
-    },
-    'tech.examples.title': {
-      es: 'Resultados generados con nuestra tecnología',
-      en: 'Results generated with our technology'
-    },
-    'tech.examples.subtitle': {
-      es: 'Ejemplos generados con nuestra tecnología de IA avanzada',
-      en: 'Examples generated with our advanced AI technology'
-    },
     'tech.clone.professional': {
       es: 'Clon Profesional',
       en: 'Professional Clone'
@@ -497,6 +492,43 @@ class TranslationService {
       es: 'Clon Tecnológico',
       en: 'Tech Clone'
     },
+    // Technology Section (custom keys)
+    'tech.tech1.title': { es: 'Clonación realista', en: 'Realistic cloning' },
+    'tech.tech1.desc': { es: 'Con solo 3 min de datos', en: 'With just 3 min of data' },
+    'tech.tech1.detail': { es: 'Nuestra IA puede crear un clon hiperrealista con apenas 3 minutos de audio y video.', en: 'Our AI can create a hyper-realistic clone with just 3 minutes of audio and video.' },
+    'tech.tech2.title': { es: 'RAG + Fine-tuning', en: 'RAG + Fine-tuning' },
+    'tech.tech2.desc': { es: 'Automático al subir documentos', en: 'Automatic when uploading documents' },
+    'tech.tech2.detail': { es: 'Sistema de recuperación aumentada y ajuste fino que aprende automáticamente de tus documentos.', en: 'Augmented retrieval and fine-tuning system that automatically learns from your documents.' },
+    'tech.tech3.title': { es: 'Personalidad entrenada', en: 'Trained personality' },
+    'tech.tech3.desc': { es: 'Tus palabras, tono y estilo', en: 'Your words, tone and style' },
+    'tech.tech3.detail': { es: 'Captura la esencia de tu personalidad, incluyendo expresiones, gestos y patrones de habla.', en: 'Captures the essence of your personality, including expressions, gestures and speech patterns.' },
+    'tech.tech4.title': { es: 'Voz clonada', en: 'Cloned voice' },
+    'tech.tech4.desc': { es: 'ElevenLabs / XTTS / OpenVoice', en: 'ElevenLabs / XTTS / OpenVoice' },
+    'tech.tech4.detail': { es: 'Integración con las mejores tecnologías de clonación de voz del mercado.', en: 'Integration with the best voice cloning technologies on the market.' },
+    'tech.tech5.title': { es: 'Avatares 3D', en: '3D Avatars' },
+    'tech.tech5.desc': { es: 'SadTalker, EMO y MotionLLaMA', en: 'SadTalker, EMO and MotionLLaMA' },
+    'tech.tech5.detail': { es: 'Avatares tridimensionales que se mueven y expresan de manera natural y realista.', en: 'Three-dimensional avatars that move and express themselves naturally and realistically.' },
+    'tech.tech6.title': { es: 'Encriptación biométrica', en: 'Biometric encryption' },
+    'tech.tech6.desc': { es: '+ control ético anti-deepfake', en: '+ ethical anti-deepfake control' },
+    'tech.tech6.detail': { es: 'Protección avanzada contra uso malicioso y verificación de identidad biométrica.', en: 'Advanced protection against malicious use and biometric identity verification.' },
+    'tech.stack.title': { es: 'Stack tecnológico', en: 'Technology stack' },
+    'tech.stack.subtitle': { es: 'Integramos las mejores tecnologías de IA del mercado para crear la experiencia de clonación digital más avanzada.', en: 'We integrate the best AI technologies in the market to create the most advanced digital cloning experience.' },
+    'tech.stack.voice': { es: 'Voz', en: 'Voice' },
+    'tech.stack.video': { es: 'Video', en: 'Video' },
+    'tech.stack.ai': { es: 'IA', en: 'AI' },
+    'tech.stack.proc': { es: 'Procesamiento', en: 'Processing' },
+    'tech.examples.title': { es: 'Resultados generados con nuestra tecnología', en: 'Results generated with our technology' },
+    'tech.examples.subtitle': { es: 'Ejemplos generados con nuestra tecnología de IA avanzada', en: 'Examples generated with our advanced AI technology' },
+    'tech.stats.precision': { es: 'Precisión en clonación', en: 'Cloning precision' },
+    'tech.stats.latency': { es: 'Latencia de respuesta', en: 'Response latency' },
+    'tech.stats.capacity': { es: 'Capacidad de procesamiento', en: 'Processing capacity' },
+    'tech.stats.countries': { es: 'Países soportados', en: 'Supported countries' },
+    'tech.security.title': { es: 'Seguridad y ética primero', en: 'Security and ethics first' },
+    'tech.security.banking': { es: 'Encriptación de nivel bancario', en: 'Bank-level encryption' },
+    'tech.security.biometric': { es: 'Verificación biométrica obligatoria', en: 'Mandatory biometric verification' },
+    'tech.security.control': { es: 'Control total sobre tu clon', en: 'Full control over your clone' },
+    'tech.security.deepfake': { es: 'Detección anti-deepfake integrada', en: 'Integrated anti-deepfake detection' },
+    'tech.security.desc': { es: 'Tu privacidad y seguridad son nuestra máxima prioridad. Cada clon está protegido con las mejores medidas de seguridad.', en: 'Your privacy and security are our top priority. Each clone is protected with the best security measures.' },
 
     // Access Section
     'access.badge': {
@@ -567,11 +599,11 @@ class TranslationService {
       es: 'Ocupadas',
       en: 'Occupied'
     },
-    'access.stats.available': {
-      es: 'plazas disponibles',
-      en: 'spots available'
-    },
-    'access.form.name': {
+  'access.stats.available': {
+    es: '{count} plazas disponibles', 
+    en: '{count} spots available'
+  },
+  'access.form.name': {
       es: 'Nombre completo *',
       en: 'Full name *'
     },
@@ -607,26 +639,12 @@ class TranslationService {
       es: 'Te contactaremos en las próximas 24 horas para coordinar tu acceso.',
       en: 'We will contact you within the next 24 hours to coordinate your access.'
     },
-    'access.success.title': {
-      es: '¡Solicitud enviada con éxito!',
-      en: 'Request sent successfully!'
-    },
-    'access.success.subtitle': {
-      es: 'Gracias por tu interés en Brain AIX. Nuestro equipo se pondrá en contacto contigo en las próximas 24 horas.',
-      en: 'Thank you for your interest in Brain AIX. Our team will contact you within the next 24 hours.'
-    },
-    'access.success.step1': {
-      es: 'Revisión de tu solicitud',
-      en: 'Review of your request'
-    },
-    'access.success.step2': {
-      es: 'Programación de demo personalizada',
-      en: 'Scheduling personalized demo'
-    },
-    'access.success.step3': {
-      es: 'Acceso a la plataforma beta',
-      en: 'Access to beta platform'
-    },
+    'access.success.title': { es: '¡Solicitud enviada con éxito!', en: 'Request sent successfully!' },
+    'access.success.subtitle': { es: 'Gracias por tu interés en Brain AIX. Nuestro equipo revisará tu solicitud y te contactaremos en las próximas 24 horas.', en: 'Thank you for your interest in Brain AIX. Our team will review your request and contact you within 24 hours.' },
+    'access.success.steps': { es: 'Próximos pasos:', en: 'Next steps:' },
+    'access.success.step1': { es: 'Revisión de tu caso de uso', en: 'Review of your use case' },
+    'access.success.step2': { es: 'Contacto personalizado', en: 'Personalized contact' },
+    'access.success.step3': { es: 'Acceso a la plataforma beta', en: 'Access to beta platform' },
     'access.cta.title': {
       es: '¿Serás tú el siguiente?',
       en: 'Will you be next?'
@@ -744,7 +762,31 @@ class TranslationService {
     'footer.newsletter.button': {
       es: 'Suscribirse',
       en: 'Subscribe'
-    }
+    },
+    // Hero What Is Section
+    'hero-what.title': { es: '¿Qué es Brain AIX?', en: 'What is Brain AIX?' },
+    'hero-what.subtitle': { es: 'La nueva era de los clones digitales impulsados por IA.', en: 'The new era of AI-powered digital clones.' },
+    'hero-what.tag1': { es: 'IA', en: 'AI' },
+    'hero-what.tag2': { es: 'Clon Digital', en: 'Digital Clone' },
+    'hero-what.tag3': { es: 'Automatización', en: 'Automation' },
+    // Hero Use Cases Section
+    'hero-usecases.title': { es: 'Casos de Uso Reales', en: 'Real Use Cases' },
+    'hero-usecases.subtitle': { es: 'Descubre cómo tu clon digital puede transformar tu productividad y presencia en múltiples ámbitos de tu vida.', en: 'Discover how your digital clone can transform your productivity and presence in multiple areas of your life.' },
+    'hero-usecases.tag1': { es: 'Reuniones', en: 'Meetings' },
+    'hero-usecases.tag2': { es: 'Contenido', en: 'Content' },
+    'hero-usecases.tag3': { es: 'Mensajes', en: 'Messages' },
+    // Hero Technology Section
+    'hero-tech.title': { es: 'Tecnología de Vanguardia', en: 'Cutting-edge Technology' },
+    'hero-tech.subtitle': { es: 'Descubre el stack tecnológico más avanzado que hace posible la clonación digital del futuro.', en: 'Discover the most advanced technology stack that makes future digital cloning possible.' },
+    'hero-tech.tag1': { es: 'IA Avanzada', en: 'Advanced AI' },
+    'hero-tech.tag2': { es: 'Machine Learning', en: 'Machine Learning' },
+    'hero-tech.tag3': { es: 'Biometría', en: 'Biometrics' },
+    // Hero Access Section
+    'hero-access.title': { es: 'Acceso Exclusivo', en: 'Exclusive Access' },
+    'hero-access.subtitle': { es: 'Solicita acceso anticipado y sé parte de la revolución de los clones digitales.', en: 'Request early access and be part of the digital clone revolution.' },
+    'hero-access.tag1': { es: 'Beta', en: 'Beta' },
+    'hero-access.tag2': { es: 'Exclusivo', en: 'Exclusive' },
+    'hero-access.tag3': { es: 'Prioridad', en: 'Priority' }
   }
 
   setLanguage(language: Language) {

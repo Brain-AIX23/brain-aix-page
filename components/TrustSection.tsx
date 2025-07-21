@@ -165,32 +165,32 @@ export default function TrustSection() {
             <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Brain className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">IA Avanzada</h4>
-            <p className="text-gray-600 text-sm">Tecnología de vanguardia</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.advanced-ai')}</h4>
+            <p className="text-gray-600 text-sm">{t('trust.indicator.tech')}</p>
           </div>
           
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Velocidad</h4>
-            <p className="text-gray-600 text-sm">Clonación en minutos</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.speed')}</h4>
+            <p className="text-gray-600 text-sm">{t('trust.indicator.cloning')}</p>
           </div>
           
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Globe className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Global</h4>
-            <p className="text-gray-600 text-sm">Disponible en todo el mundo</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.global')}</h4>
+            <p className="text-gray-600 text-sm">{t('trust.indicator.available')}</p>
           </div>
           
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Comunidad</h4>
-            <p className="text-gray-600 text-sm">+250 early adopters</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.community')}</h4>
+            <p className="text-gray-600 text-sm">{t('trust.indicator.early')}</p>
           </div>
         </motion.div>
 
@@ -202,14 +202,14 @@ export default function TrustSection() {
           className="mt-16 text-center"
         >
           <h4 className="text-lg font-semibold text-gray-700 mb-6">
-            Respaldado por líderes en tecnología
+            {t('trust.supported.title')}
           </h4>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-gray-400 text-sm font-medium">Partners en stealth mode</div>
+            <div className="text-gray-400 text-sm font-medium">{t('trust.supported.partner')}</div>
             <div className="text-gray-400 text-sm font-medium">•</div>
-            <div className="text-gray-400 text-sm font-medium">Advisors expertos</div>
+            <div className="text-gray-400 text-sm font-medium">{t('trust.supported.advisors')}</div>
             <div className="text-gray-400 text-sm font-medium">•</div>
-            <div className="text-gray-400 text-sm font-medium">Inversores estratégicos</div>
+            <div className="text-gray-400 text-sm font-medium">{t('trust.supported.investors')}</div>
           </div>
         </motion.div>
       </div>
