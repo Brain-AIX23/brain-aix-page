@@ -23,7 +23,7 @@ export default function TrustSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Por qué el mundo va hacia esto
+            {t('trust.why.title')}
           </h2>
           
           {/* Elon Musk Quote */}

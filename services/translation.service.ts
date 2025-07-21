@@ -171,6 +171,7 @@ class TranslationService {
     'trust.indicator.available': { es: 'Disponible en todo el mundo', en: 'Available worldwide' },
     'trust.indicator.community': { es: 'Comunidad', en: 'Community' },
     'trust.indicator.early': { es: '+250 early adopters', en: '+250 early adopters' },
+    'trust.why.title': { es: 'Por qué el mundo va hacia esto', en: 'Why the world is moving this way' },
 
     // What Is Section
     'whatis.badge': {
@@ -786,7 +787,8 @@ class TranslationService {
     'hero-access.subtitle': { es: 'Solicita acceso anticipado y sé parte de la revolución de los clones digitales.', en: 'Request early access and be part of the digital clone revolution.' },
     'hero-access.tag1': { es: 'Beta', en: 'Beta' },
     'hero-access.tag2': { es: 'Exclusivo', en: 'Exclusive' },
-    'hero-access.tag3': { es: 'Prioridad', en: 'Priority' }
+    'hero-access.tag3': { es: 'Prioridad', en: 'Priority' },
+    'brand.name': { es: 'Brain AIX', en: 'Brain AIX' }
   }
 
   setLanguage(language: Language) {
