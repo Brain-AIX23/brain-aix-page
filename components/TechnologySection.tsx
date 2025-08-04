@@ -30,42 +30,42 @@ export default function TechnologySection() {
       icon: Target,
       title: t('tech.tech1.title'),
       description: t('tech.tech1.desc'),
-      color: "from-red-500 to-pink-500",
+      color: "from-primary-400 to-primary-500",
       detail: t('tech.tech1.detail')
     },
     {
       icon: Dna,
       title: t('tech.tech2.title'),
       description: t('tech.tech2.desc'),
-      color: "from-blue-500 to-cyan-500",
+      color: "from-accent-400 to-accent-500",
       detail: t('tech.tech2.detail')
     },
     {
       icon: Brain,
       title: t('tech.tech3.title'),
       description: t('tech.tech3.desc'),
-      color: "from-purple-500 to-pink-500",
+      color: "from-primary-500 to-accent-500",
       detail: t('tech.tech3.detail')
     },
     {
       icon: Mic,
       title: t('tech.tech4.title'),
       description: t('tech.tech4.desc'),
-      color: "from-green-500 to-emerald-500",
+      color: "from-accent-500 to-primary-400",
       detail: t('tech.tech4.detail')
     },
     {
       icon: Bot,
       title: t('tech.tech5.title'),
       description: t('tech.tech5.desc'),
-      color: "from-yellow-500 to-orange-500",
+      color: "from-primary-400 to-accent-400",
       detail: t('tech.tech5.detail')
     },
     {
       icon: Shield,
       title: t('tech.tech6.title'),
       description: t('tech.tech6.desc'),
-      color: "from-indigo-500 to-purple-500",
+      color: "from-accent-400 to-primary-500",
       detail: t('tech.tech6.detail')
     }
   ]
@@ -111,7 +111,7 @@ export default function TechnologySection() {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group"
             >
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 h-full border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group-hover:border-brain-200">
+              <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group-hover:border-primary-200">
                 <div className={`w-16 h-16 bg-gradient-to-r ${tech.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <tech.icon className="h-8 w-8 text-white" />
                 </div>
@@ -120,7 +120,7 @@ export default function TechnologySection() {
                   {tech.title}
                 </h3>
                 
-                <p className="text-brain-600 font-semibold mb-4">
+                <p className="text-primary-600 font-semibold mb-4">
                   {tech.description}
                 </p>
                 
@@ -137,7 +137,7 @@ export default function TechnologySection() {
            initial={{ opacity: 0, y: 30 }}
            animate={inView ? { opacity: 1, y: 0 } : {}}
            transition={{ delay: 0.6, duration: 0.8 }}
-           className="bg-gradient-to-r from-brain-50 to-purple-50 rounded-3xl p-8 md:p-12 border border-brain-100"
+           className="bg-gradient-card rounded-3xl p-8 md:p-12 border border-gray-200"
          >
            <div className="text-center mb-12">
              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -156,7 +156,7 @@ export default function TechnologySection() {
              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                {/* Example 1 */}
                <div className="group relative">
-                 <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
+                 <div className="aspect-square bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
                    <img
                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                      alt="Clon Profesional"
@@ -171,7 +171,7 @@ export default function TechnologySection() {
 
                {/* Example 2 */}
                <div className="group relative">
-                 <div className="aspect-square bg-gradient-to-br from-pink-500 to-red-500 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
+                 <div className="aspect-square bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
                    <img
                      src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                      alt="Clon Creativo"
@@ -186,7 +186,7 @@ export default function TechnologySection() {
 
                {/* Example 3 */}
                <div className="group relative">
-                 <div className="aspect-square bg-gradient-to-br from-green-500 to-teal-500 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
+                 <div className="aspect-square bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
                    <img
                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                      alt="Clon Tecnológico"
@@ -213,7 +213,7 @@ export default function TechnologySection() {
                  initial={{ opacity: 0, scale: 0.8 }}
                  animate={inView ? { opacity: 1, scale: 1 } : {}}
                  transition={{ delay: 0.8 + index * 0.05, duration: 0.5 }}
-                 className="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-all duration-300"
+                 className="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
                >
                  <div className="text-sm font-medium text-gray-500 mb-1">
                    {tech.category}
@@ -234,7 +234,7 @@ export default function TechnologySection() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">99.9%</div>
@@ -242,7 +242,7 @@ export default function TechnologySection() {
           </div>
           
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <Cpu className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">&lt;100ms</div>
@@ -250,7 +250,7 @@ export default function TechnologySection() {
           </div>
           
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <Database className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">PB</div>
@@ -258,7 +258,7 @@ export default function TechnologySection() {
           </div>
           
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <Globe className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">150+</div>
@@ -299,7 +299,7 @@ export default function TechnologySection() {
             </div>
             
             <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="h-16 w-16 text-white" />
               </div>
               <p className="text-gray-300">

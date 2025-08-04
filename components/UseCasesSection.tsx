@@ -25,7 +25,7 @@ export default function UseCasesSection() {
       title: t("usecases.meetings.title"),
       description: t("usecases.meetings.description"),
       icon: Video,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-primary-400 to-primary-500",
       features: [
         t("usecases.meetings.feature1"),
         t("usecases.meetings.feature2"),
@@ -38,7 +38,7 @@ export default function UseCasesSection() {
       title: t("usecases.content.title"),
       description: t("usecases.content.description"),
       icon: Smartphone,
-      color: "from-purple-500 to-pink-500",
+      color: "from-accent-400 to-accent-500",
       features: [
         t("usecases.content.feature1"),
         t("usecases.content.feature2"),
@@ -51,7 +51,7 @@ export default function UseCasesSection() {
       title: t("usecases.support.title"),
       description: t("usecases.support.description"),
       icon: MessageSquare,
-      color: "from-green-500 to-emerald-500",
+      color: "from-primary-500 to-accent-500",
       features: [
         t("usecases.support.feature1"),
         t("usecases.support.feature2"),
@@ -64,7 +64,7 @@ export default function UseCasesSection() {
       title: t("usecases.legacy.title"),
       description: t("usecases.legacy.description"),
       icon: Heart,
-      color: "from-red-500 to-pink-500",
+      color: "from-accent-500 to-primary-400",
       features: [
         t("usecases.legacy.feature1"),
         t("usecases.legacy.feature2"),
@@ -77,7 +77,7 @@ export default function UseCasesSection() {
       title: t("usecases.education.title"),
       description: t("usecases.education.description"),
       icon: BookOpen,
-      color: "from-yellow-500 to-orange-500",
+      color: "from-primary-400 to-accent-400",
       features: [
         t("usecases.education.feature1"),
         t("usecases.education.feature2"),
@@ -88,7 +88,7 @@ export default function UseCasesSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-white">
+    <section className="py-20 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -159,7 +159,7 @@ export default function UseCasesSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-auto bg-gradient-to-r from-brain-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                className="mt-auto bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 hover:shadow-lg transition-all duration-300"
               >
                 {t('usecases.try')}
               </motion.button>
@@ -199,7 +199,7 @@ export default function UseCasesSection() {
           transition={{ delay: 1, duration: 0.8 }}
           className="text-center mt-20"
         >
-          <div className="bg-gradient-to-r from-brain-50 to-purple-50 rounded-3xl p-8 md:p-12 border border-brain-100">
+          <div className="bg-gradient-card rounded-3xl p-8 md:p-12 border border-gray-200">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               {t('usecases.cta.title')}
             </h3>
@@ -209,7 +209,7 @@ export default function UseCasesSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-brain-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:shadow-2xl transition-all duration-300"
             >
               {t('usecases.cta.button')}
             </motion.button>

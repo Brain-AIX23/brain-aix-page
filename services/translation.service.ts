@@ -646,6 +646,25 @@ class TranslationService {
     'access.success.step1': { es: 'Revisión de tu caso de uso', en: 'Review of your use case' },
     'access.success.step2': { es: 'Contacto personalizado', en: 'Personalized contact' },
     'access.success.step3': { es: 'Acceso a la plataforma beta', en: 'Access to beta platform' },
+    'access.success.send-another': { es: 'Enviar otro formulario', en: 'Send another form' },
+    'access.success.already-sent': { es: 'Ya has enviado un formulario', en: 'You have already sent a form' },
+    'access.success.reset-message': { es: '¿Quieres enviar otro formulario?', en: 'Do you want to send another form?' },
+    'access.form.loading': { es: 'Enviando...', en: 'Sending...' },
+    'access.form.error.general': { es: 'Error al enviar el formulario', en: 'Error sending form' },
+    'access.form.error.required': { es: 'Faltan campos requeridos', en: 'Missing required fields' },
+    'access.form.error.email': { es: 'Email inválido', en: 'Invalid email' },
+    // Use Cases
+    'access.usecase1': { es: 'Reuniones virtuales y presentaciones', en: 'Virtual meetings and presentations' },
+    'access.usecase2': { es: 'Contenido para redes sociales', en: 'Social media content' },
+    'access.usecase3': { es: 'Atención al cliente y soporte', en: 'Customer service and support' },
+    'access.usecase4': { es: 'Educación y entrenamiento', en: 'Education and training' },
+    'access.usecase5': { es: 'Ventas y marketing', en: 'Sales and marketing' },
+    'access.usecase6': { es: 'Legado digital y preservación', en: 'Digital legacy and preservation' },
+    // Timelines
+    'access.timeline1': { es: 'Inmediatamente (1-2 semanas)', en: 'Immediately (1-2 weeks)' },
+    'access.timeline2': { es: 'Próximo mes (2-4 semanas)', en: 'Next month (2-4 weeks)' },
+    'access.timeline3': { es: 'En 3 meses', en: 'In 3 months' },
+    'access.timeline4': { es: 'Más de 3 meses', en: 'More than 3 months' },
     'access.cta.title': {
       es: '¿Serás tú el siguiente?',
       en: 'Will you be next?'

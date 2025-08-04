@@ -46,18 +46,23 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center space-x-2 px-3 py-2 rounded-lg border transition-all duration-200
-          ${isScrolled ? 'bg-white border-gray-200 text-gray-900' : 'bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20'}`}
+          ${isScrolled 
+            ? 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50' 
+            : 'bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20'
+          }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Globe className="w-4 h-4" />
+        <Globe className={`w-4 h-4 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />
         <span className="text-lg">{currentLang?.flag}</span>
-        <span className="text-sm font-medium hidden sm:block">{currentLang?.name}</span>
+        <span className={`text-sm font-medium hidden sm:block ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
+          {currentLang?.name}
+        </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className={`w-4 h-4 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />
         </motion.div>
       </motion.button>
 
@@ -74,8 +79,8 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
               <motion.button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code as Language)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-100 transition-colors duration-200 ${
-                  currentLanguage === language.code ? 'bg-gray-100' : ''
+                className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-primary-50 transition-colors duration-200 ${
+                  currentLanguage === language.code ? 'bg-primary-50' : ''
                 }`}
                 whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.98 }}
@@ -87,7 +92,7 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
                 {currentLanguage === language.code && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="w-2 h-2 bg-blue-500 rounded-full ml-auto"
+                    className="w-2 h-2 bg-primary-500 rounded-full ml-auto"
                   />
                 )}
               </motion.button>

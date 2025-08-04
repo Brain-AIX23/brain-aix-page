@@ -62,12 +62,12 @@ export default function Footer() {
                   className="flex items-center space-x-2 mb-6"
                 >
                   <div className="relative">
-                    <Brain className="h-8 w-8 text-brain-400" />
+                    <Brain className="h-8 w-8 text-primary-400" />
                     <div className="absolute -top-1 -right-1">
                       <Zap className="h-4 w-4 text-yellow-500" />
                     </div>
                   </div>
-                  <span className="text-xl font-bold bg-gradient-to-r from-brain-400 to-purple-400 bg-clip-text text-transparent">
+                  <span className="text-xl font-bold bg-gradient-to-r from-primary-400 via-accent-400 to-primary-500 bg-clip-text text-transparent">
                     Brain AIX
                   </span>
                 </motion.div>
@@ -84,7 +84,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-10 h-10 bg-gray-700/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-brain-600 transition-all duration-300"
+                      className="w-10 h-10 bg-gray-700/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-primary-600 transition-all duration-300"
                     >
                       <social.icon className="h-5 w-5" />
                     </motion.a>
@@ -168,7 +168,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-brain-800 to-purple-800 rounded-2xl p-8 mb-12"
+          className="bg-gradient-to-r from-primary-800 to-accent-800 rounded-2xl p-8 mb-12"
         >
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">
@@ -181,12 +181,12 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder={t('footer.newsletter.placeholder')}
-                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brain-400"
+                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-brain-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-primary text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
               >
                 {t('footer.newsletter.button')}
               </motion.button>

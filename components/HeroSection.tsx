@@ -11,14 +11,15 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background con nueva paleta elegante */}
       <div className="absolute inset-0 z-0">
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-brain-900/90" />
+        {/* Overlay gradient con paleta mejorada */}
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +45,7 @@ export default function HeroSection() {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-8"
           >
             <span className="block">{t('hero.title.line1')}</span>
-            <span className="block bg-gradient-to-r from-brain-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-primary-300 via-accent-400 to-primary-500 bg-clip-text text-transparent">
               {t('hero.title.line2')}
             </span>
           </motion.h1>
@@ -69,7 +70,7 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-white text-black px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 flex items-center space-x-3 shadow-2xl"
+              className="group bg-white text-gray-900 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-50 transition-all duration-300 flex items-center space-x-3 shadow-2xl"
             >
               <span>{t('hero.cta.primary')}</span>
               <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
@@ -128,7 +129,7 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Floating elements */}
+      {/* Floating elements con nueva paleta */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ 
@@ -141,7 +142,7 @@ export default function HeroSection() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-20 left-10 w-20 h-20 bg-brain-500/20 rounded-full blur-xl"
+          className="absolute top-20 left-10 w-20 h-20 bg-primary-400/20 rounded-full blur-xl"
         />
         <motion.div
           animate={{ 
@@ -154,25 +155,38 @@ export default function HeroSection() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl"
+          className="absolute bottom-20 right-10 w-32 h-32 bg-accent-400/20 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            x: [0, 60, 0],
+            y: [0, -30, 0],
+            rotate: [0, 90, 180]
+          }}
+          transition={{ 
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-40 right-20 w-16 h-16 bg-primary-500/20 rounded-full blur-xl"
         />
       </div>
     </section>
   )
-} 
+}
 
 export function HeroWhatIsSection() {
   const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-black" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-black to-purple-900" />
+      <div className="absolute inset-0 z-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             {t('hero-what.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-8">
             {t('hero-what.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
@@ -190,14 +204,14 @@ export function HeroUseCasesSection() {
   const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-black" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-black to-purple-900" />
+      <div className="absolute inset-0 z-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             {t('hero-usecases.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-8">
             {t('hero-usecases.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
@@ -215,14 +229,14 @@ export function HeroTechnologySection() {
   const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-black" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-black to-purple-900" />
+      <div className="absolute inset-0 z-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             {t('hero-tech.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-8">
             {t('hero-tech.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">
@@ -240,14 +254,14 @@ export function HeroAccessSection() {
   const { t } = useTranslation()
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-black" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-black to-purple-900" />
+      <div className="absolute inset-0 z-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             {t('hero-access.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-8">
             {t('hero-access.subtitle')}
           </p>
           <div className="flex justify-center space-x-4">

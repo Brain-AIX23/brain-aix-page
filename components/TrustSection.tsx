@@ -13,7 +13,7 @@ export default function TrustSection() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -34,7 +34,7 @@ export default function TrustSection() {
             className="max-w-4xl mx-auto mb-12"
           >
             <div className="relative">
-              <Quote className="absolute -top-4 -left-4 h-12 w-12 text-brain-400 opacity-20" />
+              <Quote className="absolute -top-4 -left-4 h-12 w-12 text-primary-400 opacity-20" />
               <blockquote className="text-2xl md:text-3xl font-medium text-gray-800 leading-relaxed italic">
                 "{t('trust.quote.text')}"
               </blockquote>
@@ -87,7 +87,7 @@ export default function TrustSection() {
                  initial={{ opacity: 0, y: 20 }}
                  animate={inView ? { opacity: 1, y: 0 } : {}}
                  transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
-                 className="bg-white rounded-2xl p-6 shadow-lg"
+                 className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                >
                  <div className="flex items-center mb-4">
                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
@@ -115,7 +115,7 @@ export default function TrustSection() {
            transition={{ delay: 0.8, duration: 0.8 }}
            className="max-w-6xl mx-auto"
          >
-           <div className="bg-gradient-to-r from-brain-50 to-purple-50 rounded-3xl p-8 md:p-12 border border-brain-100 overflow-hidden">
+           <div className="bg-gradient-card rounded-3xl p-8 md:p-12 border border-gray-200 overflow-hidden">
              {/* Background Image */}
              <div className="absolute inset-0 opacity-10">
              </div>
@@ -162,7 +162,7 @@ export default function TrustSection() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-brain-300 to-purple-300 rounded-full flex items-center justify-center mx-auto mb-4">
               <Brain className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.advanced-ai')}</h4>
@@ -170,7 +170,7 @@ export default function TrustSection() {
           </div>
           
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-brain-300 to-purple-300 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.speed')}</h4>
@@ -178,7 +178,7 @@ export default function TrustSection() {
           </div>
           
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-brain-300 to-purple-300 rounded-full flex items-center justify-center mx-auto mb-4">
               <Globe className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.global')}</h4>
@@ -186,7 +186,7 @@ export default function TrustSection() {
           </div>
           
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-brain-300 to-purple-300 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('trust.indicator.community')}</h4>

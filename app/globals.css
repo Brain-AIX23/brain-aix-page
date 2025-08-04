@@ -7,15 +7,44 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 248, 250, 252; /* #f8fafc */
   --background-end-rgb: 255, 255, 255;
+  
+  /* Paleta de colores refactorizada */
+  --primary-50: #f8f9ff;
+  --primary-100: #e8ecff;
+  --primary-200: #d1d9ff;
+  --primary-300: #a8b8ff;
+  --primary-400: #7a8fff;
+  --primary-500: #5a6bff;
+  --primary-600: #4a4bff;
+  --primary-700: #3f3fd1;
+  --primary-800: #3535a8;
+  --primary-900: #2f2f85;
+  
+  --accent-50: #fdf4ff;
+  --accent-100: #fae8ff;
+  --accent-200: #f5d0fe;
+  --accent-300: #f0abfc;
+  --accent-400: #e879f9;
+  --accent-500: #d946ef;
+  --accent-600: #c026d3;
+  --accent-700: #a21caf;
+  --accent-800: #86198f;
+  --accent-900: #701a75;
+  
+  --lavender-500: #b78ac9;
+  --purple-500: #9f7dd3;
+  --skyblue-500: #7299f3;
+  --coolblue-500: #5aa9f3;
+  --lightgray: #f8fafc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 15, 23, 42; /* dark-900 */
+    --background-end-rgb: 30, 41, 59; /* dark-800 */
   }
 }
 
@@ -35,11 +64,14 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      135deg,
+      var(--primary-50) 0%,
+      var(--primary-100) 25%,
+      var(--primary-200) 50%,
+      var(--primary-300) 75%,
+      var(--primary-400) 100%
+    );
+  min-height: 100vh;
 }
 
 a {
@@ -59,16 +91,16 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--lightgray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--primary-500);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--primary-600);
 }
 
 /* Custom animations */
@@ -85,20 +117,102 @@ a {
 }
 
 .gradient-animation {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, var(--primary-400), var(--accent-400), var(--primary-500), var(--accent-500));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
 /* Glass morphism effect */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(248, 250, 252, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(248, 250, 252, 0.2);
 }
 
 .glass-dark {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Nuevos estilos con la paleta refactorizada */
+.bg-custom-gradient {
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 25%, var(--primary-200) 50%, var(--primary-300) 75%, var(--primary-400) 100%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.text-primary {
+  color: var(--primary-600);
+}
+
+.text-accent {
+  color: var(--accent-500);
+}
+
+.text-lavender {
+  color: var(--lavender-500);
+}
+
+.text-purple {
+  color: var(--purple-500);
+}
+
+.text-skyblue {
+  color: var(--skyblue-500);
+}
+
+.text-coolblue {
+  color: var(--coolblue-500);
+}
+
+.bg-primary {
+  background-color: var(--primary-500);
+}
+
+.bg-accent {
+  background-color: var(--accent-500);
+}
+
+.bg-lavender {
+  background-color: var(--lavender-500);
+}
+
+.bg-purple {
+  background-color: var(--purple-500);
+}
+
+.bg-skyblue {
+  background-color: var(--skyblue-500);
+}
+
+.bg-coolblue {
+  background-color: var(--coolblue-500);
+}
+
+.bg-lightgray {
+  background-color: var(--lightgray);
+}
+
+/* Gradientes mejorados */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-500) 50%, var(--primary-600) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 50%, var(--accent-600) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
 } 

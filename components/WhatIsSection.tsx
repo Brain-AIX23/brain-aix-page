@@ -17,19 +17,19 @@ export default function WhatIsSection() {
       icon: Upload,
       title: t("whatis.step1.title"),
       description: t("whatis.step1.description"),
-      color: "from-blue-500 to-cyan-500"
+      color: "from-primary-400 to-primary-500"
     },
     {
       icon: Brain,
       title: t("whatis.step2.title"),
       description: t("whatis.step2.description"),
-      color: "from-purple-500 to-pink-500"
+      color: "from-accent-400 to-accent-500"
     },
     {
       icon: Rocket,
       title: t("whatis.step3.title"),
       description: t("whatis.step3.description"),
-      color: "from-green-500 to-emerald-500"
+      color: "from-primary-500 to-accent-500"
     }
   ]
 
@@ -50,8 +50,8 @@ export default function WhatIsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center space-x-2 bg-brain-50 text-brain-700 rounded-full px-6 py-3 mb-8">
-            <div className="w-2 h-2 bg-brain-500 rounded-full"></div>
+          <div className="inline-flex items-center space-x-2 bg-primary-50 text-primary-700 rounded-full px-6 py-3 mb-8">
+            <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
             <span className="text-sm font-medium">{t('whatis.badge')}</span>
           </div>
           
@@ -74,12 +74,12 @@ export default function WhatIsSection() {
               className="relative"
             >
               {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-brain-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl z-10">
                 {index + 1}
               </div>
 
               {/* Card */}
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 h-full border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
                 <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <step.icon className="h-8 w-8 text-white" />
                 </div>
@@ -95,7 +95,7 @@ export default function WhatIsSection() {
 
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-brain-500 to-purple-500 transform -translate-y-1/2 z-0" />
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-primary transform -translate-y-1/2 z-0" />
               )}
             </motion.div>
           ))}
@@ -114,7 +114,7 @@ export default function WhatIsSection() {
               whileHover={{ scale: 1.05 }}
               className="text-center group"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-brain-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-all duration-300">
                 <feature.icon className="h-8 w-8 text-white" />
               </div>
               <p className="text-gray-700 font-medium">{feature.text}</p>
@@ -127,7 +127,7 @@ export default function WhatIsSection() {
            initial={{ opacity: 0, y: 30 }}
            animate={inView ? { opacity: 1, y: 0 } : {}}
            transition={{ delay: 0.8, duration: 0.8 }}
-           className="bg-gradient-to-r from-brain-50 to-purple-50 rounded-3xl p-8 md:p-12 border border-brain-100"
+           className="bg-gradient-card rounded-3xl p-8 md:p-12 border border-gray-200"
          >
            <div className="text-center mb-8">
              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -201,7 +201,7 @@ export default function WhatIsSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-brain-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+            className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:shadow-2xl transition-all duration-300"
           >
             {t('whatis.cta.button')}
           </motion.button>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
@@ -27,16 +27,58 @@ export default function AccessSection() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const { t } = useTranslation()
+
+  // Verificar si ya se envió el formulario al cargar el componente
+  useEffect(() => {
+    const hasSubmitted = localStorage.getItem('formSubmitted')
+    if (hasSubmitted === 'true') {
+      setIsSubmitted(true)
+    }
+  }, [])
   
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    setIsSubmitted(true)
+    setIsLoading(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          useCase: formData.useCase,
+          timeline: formData.timeline,
+          message: (e.target as HTMLFormElement).message?.value || ''
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || t('access.form.error.general'))
+      }
+
+      // Guardar en localStorage que ya se envió el formulario
+      localStorage.setItem('formSubmitted', 'true')
+      setIsSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t('access.form.error.general'))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -44,6 +86,20 @@ export default function AccessSection() {
       ...formData,
       [e.target.name]: e.target.value
     })
+  }
+
+  const handleSendAnotherForm = () => {
+    // Limpiar localStorage y resetear el estado
+    localStorage.removeItem('formSubmitted')
+    setIsSubmitted(false)
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      useCase: '',
+      timeline: ''
+    })
+    setError('')
   }
 
   const benefits = [
@@ -87,7 +143,7 @@ export default function AccessSection() {
 
   if (isSubmitted) {
     return (
-      <section id="access" className="py-20 bg-gradient-to-br from-brain-50 to-purple-50">
+      <section id="access" className="py-20 bg-gradient-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -95,7 +151,7 @@ export default function AccessSection() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-3xl p-12 shadow-xl"
           >
-            <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-10 w-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -104,25 +160,34 @@ export default function AccessSection() {
             <p className="text-lg text-gray-600 mb-8">
               {t('access.success.subtitle')}
             </p>
-            <div className="bg-gradient-to-r from-brain-50 to-purple-50 rounded-2xl p-6">
+            <div className="bg-gradient-card rounded-2xl p-6 mb-8">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 {t('access.success.steps')}
               </h3>
               <div className="space-y-3 text-left max-w-md mx-auto">
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-brain-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
                   <span className="text-gray-700">{t('access.success.step1')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-brain-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
                   <span className="text-gray-700">{t('access.success.step2')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-brain-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
                   <span className="text-gray-700">{t('access.success.step3')}</span>
                 </div>
               </div>
             </div>
+            
+            <motion.button
+              onClick={handleSendAnotherForm}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-xl"
+            >
+              {t('access.success.send-another')}
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -130,7 +195,7 @@ export default function AccessSection() {
   }
 
   return (
-    <section id="access" className="py-20 bg-gradient-to-br from-brain-50 to-purple-50">
+    <section id="access" className="py-20 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -139,8 +204,8 @@ export default function AccessSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-brain-50 to-purple-50 text-brain-700 rounded-full px-6 py-3 mb-8 border border-brain-200">
-            <div className="w-2 h-2 bg-brain-500 rounded-full animate-pulse"></div>
+          <div className="inline-flex items-center space-x-2 bg-primary-50 text-primary-700 rounded-full px-6 py-3 mb-8 border border-primary-200">
+            <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-medium">{t('access.badge')}</span>
           </div>
           
@@ -210,7 +275,7 @@ export default function AccessSection() {
                     transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                     className="flex items-start space-x-4"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-brain-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -227,13 +292,13 @@ export default function AccessSection() {
             </div>
 
             {/* Stats */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">
                 {t('access.stats.title')}
               </h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-brain-600">250</div>
+                  <div className="text-2xl font-bold text-primary-600">250</div>
                   <div className="text-sm text-gray-600">{t('access.stats.total')}</div>
                 </div>
                 <div className="text-center">
@@ -242,7 +307,7 @@ export default function AccessSection() {
                 </div>
               </div>
               <div className="mt-4 bg-gray-200 rounded-full h-2">
-                <div className="bg-gradient-to-r from-brain-500 to-purple-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                <div className="bg-gradient-primary h-2 rounded-full" style={{ width: '75%' }}></div>
               </div>
               <p className="text-sm text-gray-600 mt-2">
   {t('access.stats.available').replace('{count}', '63')}
@@ -254,7 +319,7 @@ export default function AccessSection() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="bg-white rounded-3xl p-8 shadow-xl"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -270,7 +335,7 @@ export default function AccessSection() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                     placeholder={t('access.form.name')}
                   />
                 </div>
@@ -289,7 +354,7 @@ export default function AccessSection() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                     placeholder={t('access.form.email')}
                   />
                 </div>
@@ -305,7 +370,7 @@ export default function AccessSection() {
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                   placeholder={t('access.form.company')}
                 />
               </div>
@@ -320,7 +385,7 @@ export default function AccessSection() {
                   required
                   value={formData.useCase}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                 >
                   <option value="">{t('access.form.usecase')}</option>
                   {useCases.map((useCase, index) => (
@@ -341,7 +406,7 @@ export default function AccessSection() {
                   required
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                 >
                   <option value="">{t('access.form.timeline')}</option>
                   {timelines.map((timeline, index) => (
@@ -362,20 +427,40 @@ export default function AccessSection() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brain-500 focus:border-transparent transition-all duration-200"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                     placeholder={t('access.form.message.placeholder')}
                   />
                 </div>
               </div>
 
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-4">
+                  <p className="text-red-600 text-sm">{error}</p>
+                </div>
+              )}
+
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-black text-white py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center space-x-3 shadow-xl"
+                disabled={isLoading}
+                whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                className={`w-full py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-xl ${
+                  isLoading 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-xl'
+                }`}
               >
-                <span>{t('access.form.submit')}</span>
-                <ArrowRight className="h-6 w-6" />
+                {isLoading ? (
+                  <>
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+                    <span>{t('access.form.loading')}</span>
+                  </>
+                ) : (
+                  <>
+                    <span>{t('access.form.submit')}</span>
+                    <ArrowRight className="h-6 w-6" />
+                  </>
+                )}
               </motion.button>
 
               <p className="text-sm text-gray-500 text-center">
@@ -409,7 +494,7 @@ export default function AccessSection() {
                <motion.button
                  whileHover={{ scale: 1.05 }}
                  whileTap={{ scale: 0.95 }}
-                 className="bg-white text-black px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl"
+                 className="bg-gray-900 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all duration-300 shadow-2xl"
                >
                  {t('access.cta.button')}
                </motion.button>
