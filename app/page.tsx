@@ -7,6 +7,9 @@ import AccessSection from '../components/AccessSection'
 import Footer from '../components/Footer'
 import UseCasesSection from '../components/UseCasesSection'
 import TechnologySection from '../components/TechnologySection'
+
+import UnifiedRegistrationForm from '../components/UnifiedRegistrationForm'
+import FinalCTASection from '../components/FinalCTASection'
 import { useState, useEffect } from 'react'
 import { HeroWhatIsSection, HeroUseCasesSection, HeroTechnologySection, HeroAccessSection } from '../components/HeroSection'
 
@@ -20,7 +23,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation sectionActive={sectionActive} onSectionChange={setSectionActive} />
-      {sectionActive === 'home' && <><HeroSection /><TrustSection /><WhatIsSection /><AccessSection /></>}
+      {sectionActive === 'home' && <><HeroSection /><WhatIsSection /><UseCasesSection /><UnifiedRegistrationForm /><FinalCTASection /></>}
       {sectionActive === 'what-is' && <><HeroWhatIsSection /><WhatIsSection /></>}
       {sectionActive === 'use-cases' && <><HeroUseCasesSection /><UseCasesSection /></>}
       {sectionActive === 'technology' && <><HeroTechnologySection /><TechnologySection /></>}

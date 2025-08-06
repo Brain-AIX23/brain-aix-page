@@ -37,9 +37,9 @@ class TranslationService {
     },
 
     // Hero Section
-    'hero.beta-badge': {
-      es: 'Beta Exclusiva - Solo 250 usuarios',
-      en: 'Exclusive Beta - Only 250 users'
+    'hero.urgency-badge': {
+      es: 'Solo 250 plazas beta — Reserva la tuya por $20',
+      en: 'Only 250 beta spots — Reserve yours for $20'
     },
     'hero.title.line1': {
       es: 'Crea tu clon',
@@ -53,13 +53,13 @@ class TranslationService {
       es: 'La forma más simple de crear y compartir tu presencia digital con el mundo, potenciada por IA de vanguardia.',
       en: 'The simplest way to create and share your digital presence with the world, powered by cutting-edge AI.'
     },
-    'hero.cta.primary': {
-      es: 'Comenzar ahora',
-      en: 'Start Now'
+    'hero.cta.reserve': {
+      es: 'Reservar mi cupo ahora',
+      en: 'Reserve my spot now'
     },
-    'hero.cta.secondary': {
-      es: 'Ver demo',
-      en: 'Watch Demo'
+    'hero.cta.more-info': {
+      es: 'Quiero más información',
+      en: 'I want more information'
     },
     'hero.stats.clones': {
       es: 'Clones creados',
@@ -72,6 +72,10 @@ class TranslationService {
     'hero.stats.precision': {
       es: 'Precisión',
       en: 'Precision'
+    },
+    'counter.remaining': {
+      es: 'Quedan {remaining} de {total}',
+      en: '{remaining} of {total} remaining'
     },
 
     // Trust Section
@@ -259,6 +263,14 @@ class TranslationService {
       es: 'Descubre cómo tu clon digital puede transformar tu productividad y presencia en múltiples ámbitos de tu vida.',
       en: 'Discover how your digital clone can transform your productivity and presence in multiple areas of your life.'
     },
+    'usecases.microtext': {
+      es: 'Tu clon digital se adapta a tu voz, expresiones y personalidad, y lo puedes usar para...',
+      en: 'Your digital clone adapts to your voice, expressions and personality, and you can use it for...'
+    },
+    'usecases.badge': {
+      es: 'Casos de Uso Reales',
+      en: 'Real Use Cases'
+    },
     'usecases.meetings.title': {
       es: 'Reuniones virtuales',
       en: 'Virtual Meetings'
@@ -379,6 +391,30 @@ class TranslationService {
       es: 'Seguimiento personalizado',
       en: 'Personalized follow-up'
     },
+    'usecases.sales.title': {
+      es: 'Ventas y Marketing',
+      en: 'Sales and Marketing'
+    },
+    'usecases.sales.description': {
+      es: 'Tu clon vendiendo y generando leads 24/7',
+      en: 'Your clone selling and generating leads 24/7'
+    },
+    'usecases.sales.feature1': {
+      es: 'Presentaciones automáticas',
+      en: 'Automatic presentations'
+    },
+    'usecases.sales.feature2': {
+      es: 'Generación de leads cualificados',
+      en: 'Qualified lead generation'
+    },
+    'usecases.sales.feature3': {
+      es: 'Seguimiento de prospectos',
+      en: 'Prospect follow-up'
+    },
+    'usecases.sales.feature4': {
+      es: 'Cierre de ventas asistido',
+      en: 'Assisted sales closing'
+    },
     'usecases.try': {
       es: 'Probar este caso de uso',
       en: 'Try this use case'
@@ -414,6 +450,236 @@ class TranslationService {
     'usecases.cta.button': {
       es: 'Solicitar acceso exclusivo',
       en: 'Request exclusive access'
+    },
+
+    // Demo Section
+    'demo.title': {
+      es: 'Demostración',
+      en: 'Demonstration'
+    },
+    'demo.subtitle': {
+      es: 'Ve tu clon digital en acción con ejemplos reales',
+      en: 'See your digital clone in action with real examples'
+    },
+    'demo.description': {
+      es: 'Voz, cara y personalidad en cualquier contexto',
+      en: 'Voice, face and personality in any context'
+    },
+    'demo.duration': {
+      es: 'Video de 20-30s mostrando ejemplos reales',
+      en: '20-30s video showing real examples'
+    },
+    'demo.cta': {
+      es: 'Reserva y crea tu clon',
+      en: 'Reserve and create your clone'
+    },
+    'demo.badge': {
+      es: 'Demostración en Vivo',
+      en: 'Live Demonstration'
+    },
+
+    // Registration Section
+    'registration.title': {
+      es: 'Registro o Pago',
+      en: 'Registration or Payment'
+    },
+    'registration.subtitle': {
+      es: 'Elige cómo quieres unirte a la revolución de la clonación digital',
+      en: 'Choose how you want to join the digital cloning revolution'
+    },
+    'registration.price.info': {
+      es: 'Beta exclusiva - Solo $20',
+      en: 'Exclusive beta - Only $20'
+    },
+    'registration.badge': {
+      es: 'Elige tu Opción',
+      en: 'Choose Your Option'
+    },
+    'registration.waitlist.title': {
+      es: 'Lista de Espera',
+      en: 'Waitlist'
+    },
+    'registration.waitlist.subtitle': {
+      es: 'Regístrate para ser notificado cuando esté disponible',
+      en: 'Register to be notified when available'
+    },
+    'registration.waitlist.button': {
+      es: 'Unirme a la lista de espera',
+      en: 'Join the waitlist'
+    },
+    'registration.payment.title': {
+      es: 'Pago Directo',
+      en: 'Direct Payment'
+    },
+    'registration.payment.subtitle': {
+      es: 'Asegura tu cupo ahora mismo',
+      en: 'Secure your spot right now'
+    },
+    'registration.payment.beta': {
+      es: 'Precio beta',
+      en: 'Beta price'
+    },
+    'registration.payment.benefit1': {
+      es: 'Acceso inmediato a la plataforma',
+      en: 'Immediate access to the platform'
+    },
+    'registration.payment.benefit2': {
+      es: 'Soporte prioritario incluido',
+      en: 'Priority support included'
+    },
+    'registration.payment.benefit3': {
+      es: 'Precio especial de lanzamiento',
+      en: 'Special launch price'
+    },
+    'registration.payment.button': {
+      es: 'Acceder a la beta por $20',
+      en: 'Access beta for $20'
+    },
+    'registration.form.name': {
+      es: 'Nombre completo',
+      en: 'Full name'
+    },
+    'registration.form.email': {
+      es: 'Correo electrónico',
+      en: 'Email'
+    },
+    'registration.form.company': {
+      es: 'Empresa',
+      en: 'Company'
+    },
+    'registration.form.usecase': {
+      es: '¿Cómo planeas usar tu clon?',
+      en: 'How do you plan to use your clone?'
+    },
+    'registration.form.timeline': {
+      es: '¿Cuándo planeas implementar?',
+      en: 'When do you plan to implement?'
+    },
+    'registration.form.message': {
+      es: 'Cuéntanos más sobre tu proyecto',
+      en: 'Tell us more about your project'
+    },
+    'registration.form.message.placeholder': {
+      es: 'Describe brevemente cómo planeas usar tu clon digital...',
+      en: 'Briefly describe how you plan to use your digital clone...'
+    },
+    'registration.usecase1': {
+      es: 'Reuniones virtuales y presentaciones',
+      en: 'Virtual meetings and presentations'
+    },
+    'registration.usecase2': {
+      es: 'Contenido para redes sociales',
+      en: 'Social media content'
+    },
+    'registration.usecase3': {
+      es: 'Atención al cliente y soporte',
+      en: 'Customer service and support'
+    },
+    'registration.usecase4': {
+      es: 'Educación y entrenamiento',
+      en: 'Education and training'
+    },
+    'registration.usecase5': {
+      es: 'Ventas y marketing',
+      en: 'Sales and marketing'
+    },
+    'registration.usecase6': {
+      es: 'Legado digital y preservación',
+      en: 'Digital legacy and preservation'
+    },
+    'registration.timeline1': {
+      es: 'Inmediatamente (1-2 semanas)',
+      en: 'Immediately (1-2 weeks)'
+    },
+    'registration.timeline2': {
+      es: 'Próximo mes (2-4 semanas)',
+      en: 'Next month (2-4 weeks)'
+    },
+    'registration.timeline3': {
+      es: 'En 3 meses',
+      en: 'In 3 months'
+    },
+    'registration.timeline4': {
+      es: 'Más de 3 meses',
+      en: 'More than 3 months'
+    },
+    'registration.form.loading': {
+      es: 'Enviando...',
+      en: 'Sending...'
+    },
+    'registration.payment.processing': {
+      es: 'Procesando pago...',
+      en: 'Processing payment...'
+    },
+    'registration.form.error': {
+      es: 'Error al enviar el formulario',
+      en: 'Error sending form'
+    },
+    'registration.success.title': {
+      es: '¡Registro exitoso!',
+      en: 'Successful registration!'
+    },
+    'registration.success.subtitle': {
+      es: 'Te hemos agregado a nuestra lista de espera. Te notificaremos cuando esté disponible.',
+      en: 'We have added you to our waitlist. We will notify you when available.'
+    },
+    'registration.success.next': {
+      es: 'Próximos pasos:',
+      en: 'Next steps:'
+    },
+    'registration.success.step1': {
+      es: 'Revisión de tu solicitud',
+      en: 'Review of your request'
+    },
+    'registration.success.step2': {
+      es: 'Notificación de disponibilidad',
+      en: 'Availability notification'
+    },
+    'registration.success.step3': {
+      es: 'Acceso a la plataforma',
+      en: 'Platform access'
+    },
+    'registration.success.send-another': {
+      es: 'Enviar otro formulario',
+      en: 'Send another form'
+    },
+    'registration.success.step1.sales': {
+      es: 'Mostrarte el proyecto en vivo',
+      en: 'Show you the project live'
+    },
+    'registration.success.step2.sales': {
+      es: 'Personalizar la solución a tus necesidades',
+      en: 'Customize the solution to your needs'
+    },
+    'registration.success.step3.sales': {
+      es: 'Obtener acceso prioritario al beta',
+      en: 'Get priority access to beta'
+    },
+    'registration.success.bonus': {
+      es: '💡 Bonus: Por ser de los primeros 250, tendrás acceso exclusivo a la beta',
+      en: '💡 Bonus: For being among the first 250, you\'ll get exclusive beta access'
+    },
+
+    // Final CTA Section
+    'final-cta.title.line1': {
+      es: 'No te quedes fuera',
+      en: 'Don\'t miss out'
+    },
+    'final-cta.title.line2': {
+      es: 'Reserva tu cupo ahora y crea tu segunda mente',
+      en: 'Reserve your spot now and create your second mind'
+    },
+    'final-cta.subtitle': {
+      es: 'Solo quedan 187 plazas de las 250 disponibles. El futuro de la clonación digital está aquí y tú puedes ser parte de él.',
+      en: 'Only 187 spots remain out of 250 available. The future of digital cloning is here and you can be part of it.'
+    },
+    'final-cta.button': {
+      es: 'Reservar mi cupo ahora',
+      en: 'Reserve my spot now'
+    },
+    'final-cta.urgency': {
+      es: '¡Solo quedan 187 plazas!',
+      en: 'Only 187 spots left!'
     },
 
     // Technology Section

@@ -8,7 +8,8 @@ import {
   Smartphone, 
   Heart, 
   BookOpen, 
-  CheckCircle
+  CheckCircle,
+  TrendingUp
 } from 'lucide-react'
 import { useTranslation } from '@/services/translation.service'
 
@@ -84,11 +85,24 @@ export default function UseCasesSection() {
         t("usecases.education.feature3"),
         t("usecases.education.feature4")
       ]
+    },
+    {
+      id: 5,
+      title: t("usecases.sales.title"),
+      description: t("usecases.sales.description"),
+      icon: TrendingUp,
+      color: "from-green-400 to-emerald-500",
+      features: [
+        t("usecases.sales.feature1"),
+        t("usecases.sales.feature2"),
+        t("usecases.sales.feature3"),
+        t("usecases.sales.feature4")
+      ]
     }
   ]
 
   return (
-    <section className="py-20 bg-gradient-card">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -97,11 +111,18 @@ export default function UseCasesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center space-x-2 bg-primary-50 text-primary-700 rounded-full px-6 py-3 mb-8 border border-primary-200">
+            <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium">{t('usecases.badge')}</span>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             {t('usecases.title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {t('usecases.subtitle')}
+          </p>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            {t('usecases.microtext')}
           </p>
         </motion.div>
 
@@ -113,19 +134,23 @@ export default function UseCasesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 h-full flex flex-col"
+              className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full flex flex-col relative overflow-hidden group"
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${useCase.color} rounded-2xl flex items-center justify-center mb-6`}>
-                <useCase.icon className="h-8 w-8 text-white" />
-              </div>
+              {/* Background gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {useCase.title}
-              </h3>
-              
-              <p className="text-gray-600 mb-6">
-                {useCase.description}
-              </p>
+              <div className="relative z-10">
+                              <div className={`w-20 h-20 bg-gradient-to-r ${useCase.color} rounded-3xl flex items-center justify-center mb-6 shadow-lg`}>
+                  <useCase.icon className="h-10 w-10 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {useCase.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {useCase.description}
+                </p>
 
               {/* Example Image */}
               <div className="mb-6">
@@ -147,11 +172,11 @@ export default function UseCasesSection() {
                 </div>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-3 mb-8">
                 {useCase.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -159,10 +184,11 @@ export default function UseCasesSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-auto bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 hover:shadow-lg transition-all duration-300"
+                className="mt-auto bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-4 rounded-2xl font-semibold hover:from-gray-800 hover:to-gray-700 hover:shadow-xl transition-all duration-300 shadow-lg"
               >
                 {t('usecases.try')}
               </motion.button>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -199,7 +225,7 @@ export default function UseCasesSection() {
           transition={{ delay: 1, duration: 0.8 }}
           className="text-center mt-20"
         >
-          <div className="bg-gradient-card rounded-3xl p-8 md:p-12 border border-gray-200">
+          <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-8 md:p-12 border border-primary-200 shadow-xl">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               {t('usecases.cta.title')}
             </h3>
@@ -209,7 +235,7 @@ export default function UseCasesSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:shadow-2xl transition-all duration-300"
+              className="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:from-primary-700 hover:to-accent-700 hover:shadow-2xl transition-all duration-300 shadow-lg"
             >
               {t('usecases.cta.button')}
             </motion.button>

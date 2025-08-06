@@ -45,7 +45,7 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
     <div className="relative">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center space-x-2 px-3 py-2 rounded-lg border transition-all duration-200
+        className={`flex items-center space-x-1.5 px-2 py-1.5 rounded-lg border transition-all duration-200
           ${isScrolled 
             ? 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50' 
             : 'bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20'
@@ -53,16 +53,16 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Globe className={`w-4 h-4 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />
-        <span className="text-lg">{currentLang?.flag}</span>
-        <span className={`text-sm font-medium hidden sm:block ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
+        <Globe className={`w-3 h-3 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />
+        <span className="text-sm">{currentLang?.flag}</span>
+        <span className={`text-xs font-medium hidden sm:block ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
           {currentLang?.name}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <ChevronDown className={`w-4 h-4 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />
+          <ChevronDown className={`w-3 h-3 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />
         </motion.div>
       </motion.button>
 
@@ -73,26 +73,26 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full right-0 mt-2 w-48 bg-white text-gray-900 border border-gray-200 rounded-xl shadow-lg overflow-hidden z-[9999]"
+            className="absolute top-full right-0 mt-2 w-40 bg-white text-gray-900 border border-gray-200 rounded-lg shadow-lg overflow-hidden z-[9999]"
           >
             {languages.map((language) => (
               <motion.button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code as Language)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-primary-50 transition-colors duration-200 ${
+                className={`w-full flex items-center space-x-2 px-3 py-2 text-left hover:bg-primary-50 transition-colors duration-200 ${
                   currentLanguage === language.code ? 'bg-primary-50' : ''
                 }`}
                 whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="text-lg">{language.flag}</span>
-                <span className="text-sm font-medium text-gray-900">
+                <span className="text-sm">{language.flag}</span>
+                <span className="text-xs font-medium text-gray-900">
                   {language.name}
                 </span>
                 {currentLanguage === language.code && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="w-2 h-2 bg-primary-500 rounded-full ml-auto"
+                    className="w-1.5 h-1.5 bg-primary-500 rounded-full ml-auto"
                   />
                 )}
               </motion.button>

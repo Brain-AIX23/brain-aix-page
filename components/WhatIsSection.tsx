@@ -185,27 +185,7 @@ export default function WhatIsSection() {
            </div>
          </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="text-center mt-16"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            {t('whatis.cta.title')}
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            {t('whatis.cta.subtitle')}
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:shadow-2xl transition-all duration-300"
-          >
-            {t('whatis.cta.button')}
-          </motion.button>
-        </motion.div>
+
       </div>
     </section>
   )
